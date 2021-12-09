@@ -47,7 +47,7 @@ const loginRoute = [
     component: LoginPage,
   },
 ];
-const AllRoute = ({ component: Component, layout: Layout, ...rest }) => (
+const AllRoute = ({ element: Component, layout: Layout, ...rest }) => (
   <Route
     {...rest}
     render={(props) => (
@@ -60,33 +60,33 @@ const AllRoute = ({ component: Component, layout: Layout, ...rest }) => (
 const AppRoutes = () => {
   const auth = useSelector((state) => state.auth);
   const token = auth && auth.accessToken;
-  const privateRoutes = privateRoute.map((item, id) => {
-    return (
-      <AllRoute
-        key={id}
-        exact
-        path={item.url}
-        layout={item.layout}
-        component={item.component}
-      />
-    );
-  });
-  const loginRoutes = loginRoute.map((item, id) => {
-    return (
-      <AllRoute
-        key={id}
-        exact
-        path={item.url}
-        layout={item.layout}
-        component={item.component}
-      />
-    );
-  });
 
   return (
-    <Fragment>
-      <Routes>{token ? privateRoutes : loginRoutes}</Routes>
-    </Fragment>
+    <Routes>
+      {token
+        ? privateRoute.map((item, id) => {
+            return (
+              <AllRoute
+                key={id}
+                exact
+                path={item.url}
+                layout={item.layout}
+                element={item.component}
+              />
+            );
+          })
+        : loginRoute.map((item, id) => {
+            return (
+              <AllRoute
+                key={id}
+                exact
+                path={item.url}
+                layout={item.layout}
+                element={item.component}
+              />
+            );
+          })}
+    </Routes>
   );
 };
 
