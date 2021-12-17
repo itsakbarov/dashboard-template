@@ -59,21 +59,13 @@ const AllRoute = ({ element: Component, layout: Layout, ...rest }) => (
 );
 const AppRoutes = () => {
   const auth = useSelector((state) => state.auth);
-  const token = auth && auth.accessToken;
+  const token = true;
 
   return (
     <Routes>
       {token
         ? privateRoute.map((item, id) => {
-            return (
-              <AllRoute
-                key={id}
-                exact
-                path={item.url}
-                layout={item.layout}
-                element={item.component}
-              />
-            );
+            return <Route element={Users} path="/" />;
           })
         : loginRoute.map((item, id) => {
             return (

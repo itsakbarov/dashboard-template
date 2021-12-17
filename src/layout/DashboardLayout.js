@@ -54,7 +54,8 @@ const DashboardLayout = ({ children }) => {
             minHeight: 280,
           }}
         >
-          {children}
+          {/* {children} */}
+          <h3 style={{ LineBreak: "anywhere" }}>{"lorem ".repeat(1000000)}</h3>
         </Content>
       </Layout>
     </Layout>
