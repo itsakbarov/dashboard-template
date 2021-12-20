@@ -51,7 +51,6 @@ const loginRoute = [
     component: LoginPage,
   },
 ];
-
 const AppRoutes = () => {
   const auth = useSelector((state) => state.auth);
   const token = true;
@@ -82,9 +81,7 @@ const AppRoutes = () => {
   console.log(privateRoutesList);
   return (
       <Fragment>
-
       <DashboardLayout>
-
       <Routes>
         {token ? privateRoutesList : loginRouteList}
       </Routes>
