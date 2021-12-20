@@ -1,0 +1,158 @@
+
+
+.form_validation_bottom-flex {       //card flex
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    flex-wrap: wrap;
+    width: 45%;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+     border-radius: 10px;
+     
+}
+.form_validation_bottom-block {    //card block
+    background-color: white;
+    flex-wrap: wrap;
+    width: 45%;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.form_validation_bottom_wrapper_title {
+    font-size: 15px;
+    margin: 0 0 7px;
+    font-weight: 500;
+}
+
+.form_validation_bottom_wrapper_description {
+    color: #74788d;
+    margin-bottom: 24px;
+}
+
+.form_validation_bottom_wrapper {      //input block class
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.form_validation_bottom_wrapper-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form_validation_label {
+    font-weight: 600;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+.form_validation_input_block {
+    width: 45%;
+    margin-bottom: 15px;
+}
+
+.form_validation_input_block-block {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form_validation_input {
+    width: 100%;
+    display: block;
+    width: 100%;
+    padding: 0.47rem 0.75rem;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #505d69;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,
+    box-shadow .15s ease-in-out;
+    outline: none;
+    &::placeholder {
+        font-size: .9rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #505d69;
+    }
+    &:focus {
+        border: 1px solid blue;
+    }
+}
+
+.error_form {
+        width: 100%;
+        margin-top: 0.25rem;
+        font-size: 80%;
+        color: #ff3d60;
+}
+
+.form_validation_input_checkbox_block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form_validation_input_checkbox_block-block {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.form_validation_input_checkbox {
+    margin-right: 8px;
+}
+
+.form_validation_input_checkbox_label {
+    cursor: pointer;
+    color: #505d69;
+}
+
+.form_validation_btn {
+    color: #fff;
+    background-color: #5664d2;
+    border-color: #5664d2;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all ease 0.2s;
+    border: 1px solid transparent;
+    &:hover {
+        border: 1px solid #5664d2;
+        background-color: transparent;
+        color: #5664d2;
+    }
+}
+
+.form_validation_cancel_btn {
+    color: #fff;
+    margin-left: 20px;
+    background-color: #74788d;
+    border-color: #74788d;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all ease 0.2s;
+    border: 1px solid transparent;
+    &:hover {
+        border: 1px solid #74788d;
+        background-color: transparent;
+        color: #74788d;
+    }
+}
