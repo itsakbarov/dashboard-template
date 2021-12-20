@@ -1,12 +1,12 @@
 import Users from "../pages/Users";
 import Comments from "../pages/Comments";
 import {
-  Navigate,
   Route,
   Routes,
   useLocation,
   useNavigate,
   useParams,
+  Navigate,
 } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Fragment } from "react";
@@ -17,18 +17,22 @@ export const privateRoute = [
     path: "/",
     exact: true,
     layout: DashboardLayout,
-    component: () => <Navigate to="/banner" />,
+    component: () => <Navigate to="/dashboard" />,
   },
 
   {
-    path: "/feedback",
+    path: "/dashboard",
     layout: DashboardLayout,
     component: Users,
   },
   {
-    path: "/banner",
+    path: "/comments",
     layout: DashboardLayout,
     component: Comments,
+  }, {
+    path: "/login",
+    layout: DashboardLayout,
+    component: () => <Navigate to="/" />,
   },
 ];
 const AltLayout = ({ children }) => <Fragment>{children}</Fragment>;
@@ -37,7 +41,7 @@ const loginRoute = [
   {
     path: "/",
     exact: true,
-    layout: DashboardLayout,
+    layout: AltLayout,
     component: () => <Navigate to="/login" />,
   },
   {
@@ -47,38 +51,46 @@ const loginRoute = [
     component: LoginPage,
   },
 ];
-const AllRoute = ({ element: Component, layout: Layout, ...rest }) => (
-  <Route
-    {...rest}
-    render={(props) => (
-      <Layout>
-        <Component {...props} />
-      </Layout>
-    )}
-  />
-);
+
 const AppRoutes = () => {
   const auth = useSelector((state) => state.auth);
   const token = true;
 
+  const privateRoutesList = privateRoute.map((item, id) => {
+    const {component: Component} = item;
+    return (
+        <Route
+            key={id}
+            exact
+            path={item.path}
+            layout={<DashboardLayout />}
+            element={<Component />}
+        />
+    );
+  });
+  const loginRouteList = loginRoute.map((item, id) => {
+    const {component: Component} = item;
+    return (
+        <Route
+        key={id}
+        exact
+        path={item.path}
+        element={<Component />}
+      />
+    );
+  });
+  console.log(privateRoutesList);
   return (
-    <Routes>
-      {token
-        ? privateRoute.map((item, id) => {
-            return <Route element={Users} path="/" />;
-          })
-        : loginRoute.map((item, id) => {
-            return (
-              <AllRoute
-                key={id}
-                exact
-                path={item.url}
-                layout={item.layout}
-                element={item.component}
-              />
-            );
-          })}
-    </Routes>
+      <Fragment>
+
+      <DashboardLayout>
+
+      <Routes>
+        {token ? privateRoutesList : loginRouteList}
+      </Routes>
+
+      </DashboardLayout>
+    </Fragment>
   );
 };
 

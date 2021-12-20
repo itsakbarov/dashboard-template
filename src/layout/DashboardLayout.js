@@ -3,9 +3,14 @@ import Sidebar from "../components/Siderbar/Siderbar";
 import "antd/dist/antd.css";
 import { Option } from "antd/lib/mentions";
 import LogoutOutlined from "@ant-design/icons/lib/icons/LogoutOutlined";
-
+import axios from "axios";
 const DashboardLayout = ({ children }) => {
   const { Header, Content } = Layout;
+
+  axios
+    .get("https://jsonplaceholder.typicode.com/posts")
+    .then((res) => console.log(res.data))
+    .catch((err) => console.log(err));
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
@@ -25,15 +30,7 @@ const DashboardLayout = ({ children }) => {
         >
           Dashboard
           <Space>
-            <Select
-              // defaultValue={i18n.language}
-              defaultValue={"UZB"}
-              style={{ width: 80 }}
-              // onChange={(language) => {
-              // dispatch(changeLanguage(language));
-              // setTimeout(() => window.location.reload(), 500);
-              // }}
-            >
+            <Select defaultValue={"UZB"} style={{ width: 80 }}>
               <Option value="ru">РУС</Option>
               <Option value="uz-Latn">UZB</Option>
               <Option value="en">ENG</Option>
@@ -54,8 +51,7 @@ const DashboardLayout = ({ children }) => {
             minHeight: 280,
           }}
         >
-          {/* {children} */}
-          <h3 style={{ LineBreak: "anywhere" }}>{"lorem ".repeat(1000000)}</h3>
+          {children}
         </Content>
       </Layout>
     </Layout>
