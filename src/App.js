@@ -10,7 +10,6 @@ function App() {
     <div className="App">
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
-          {/* <DashboardLayout /> */}
           <AppRoutes />
         </BrowserRouter>
       </PersistGate>

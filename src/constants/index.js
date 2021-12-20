@@ -1,4 +1,4 @@
-import { InfoCircleOutlined } from "@ant-design/icons";
+import { InfoCircleOutlined,DashboardOutlined,SettingFilled } from "@ant-design/icons";
 export const languages = [
   {
     id: "ru",
@@ -20,9 +20,9 @@ export const languages = [
 
 export const SIDEBAR_ITEMS = [
   {
-    name: "Users",
-    path: "/users",
-    icon: <InfoCircleOutlined />,
+    name: "Dashboard",
+    path: "/dashboard",
+    icon: <DashboardOutlined />,
     id: 1,
   },
   {
@@ -45,8 +45,8 @@ export const SIDEBAR_ITEMS = [
   },
   {
     name: "Account",
-    path: "/account",
+    path: "/setting",
     id: 5,
-    icon: <InfoCircleOutlined />,
+    icon: <SettingFilled />,
   },
 ];

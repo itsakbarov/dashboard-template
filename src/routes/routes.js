@@ -1,5 +1,5 @@
 import Users from "../pages/Users";
-import Comments from "../pages/Comments";
+import Dashboard from "../pages/Dashboard";
 import {
   Route,
   Routes,
@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import { Fragment } from "react";
 import DashboardLayout from "../layout/DashboardLayout";
 import LoginPage from "../pages/Login";
+import Comments from "../pages/Comments";
 export const privateRoute = [
   {
     path: "/",
@@ -22,6 +23,11 @@ export const privateRoute = [
 
   {
     path: "/dashboard",
+    layout: DashboardLayout,
+    component: Dashboard,
+  },
+  {
+    path: "/users",
     layout: DashboardLayout,
     component: Users,
   },
@@ -39,7 +45,7 @@ const AltLayout = ({ children }) => <Fragment>{children}</Fragment>;
 
 const loginRoute = [
   {
-    path: "/",
+    path: "*",
     exact: true,
     layout: AltLayout,
     component: () => <Navigate to="/login" />,
@@ -53,7 +59,7 @@ const loginRoute = [
 ];
 const AppRoutes = () => {
   const auth = useSelector((state) => state.auth);
-  const token = true;
+  const token = false
 
   const privateRoutesList = privateRoute.map((item, id) => {
     const {component: Component} = item;
@@ -70,23 +76,30 @@ const AppRoutes = () => {
   const loginRouteList = loginRoute.map((item, id) => {
     const {component: Component} = item;
     return (
-        <Route
-        key={id}
-        exact
-        path={item.path}
-        element={<Component />}
-      />
+         <Route
+             key={id}
+             exact
+             path={item.path}
+             element={<Component />}
+         />
     );
   });
   console.log(privateRoutesList);
   return (
       <Fragment>
-      <DashboardLayout>
-      <Routes>
-        {token ? privateRoutesList : loginRouteList}
-      </Routes>
-
-      </DashboardLayout>
+        { token ? (
+            <DashboardLayout>
+              <Routes>
+                {privateRoutesList}
+              </Routes>
+            </DashboardLayout>
+        ) : (
+            <AltLayout>
+              <Routes>
+                {loginRouteList}
+              </Routes>
+            </AltLayout>
+        )}
     </Fragment>
   );
 };
