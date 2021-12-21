@@ -72,8 +72,8 @@ const loginRoute = [
     },
 ];
 const AppRoutes = () => {
-    const auth = useSelector((state) => state.auth);
-    const token = true
+  const auth = useSelector((state) => state.auth);
+  const token = true
 
     const privateRoutesList = privateRoute.map((item, id) => {
         const {component: Component} = item;
