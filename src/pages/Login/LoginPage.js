@@ -1,11 +1,14 @@
-import classes from './Login.module.scss'
-const LoginPage = () => {
+import classes from './Login.module.scss';
+import {Route, Routes} from "react-router-dom";
+
+const LoginPage = ({children}) => {
     return <div className={classes.login}>
         <div className={classes.content}>
-            q332qw2q2q2qq2
+            {children}
         </div>
         <div className={classes.Banner}></div>
     </div>;
 }
+
 
 export default LoginPage
