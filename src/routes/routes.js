@@ -70,10 +70,16 @@ const loginRoute = [
         layout: LoginPage,
         component: Reset,
     },
+    {
+        path: "*",
+        exact: true,
+        layout: LoginPage,
+        component: () => <Navigate to={'/login'}/>,
+    },
 ];
 const AppRoutes = () => {
     const auth = useSelector((state) => state.auth);
-    const token = true
+    const token = auth
 
     const privateRoutesList = privateRoute.map((item, id) => {
         const {component: Component} = item;
@@ -97,7 +103,6 @@ const AppRoutes = () => {
             />
         );
     });
-    console.log(privateRoutesList);
     return (
         <Fragment>
             {token ? (

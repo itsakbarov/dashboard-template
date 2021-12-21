@@ -3,6 +3,8 @@ import {Form, Input, Button, Space} from 'antd';
 import {Link} from "react-router-dom";
 import {LockOutlined} from "@ant-design/icons";
 import Search from "antd/es/input/Search";
+import {setAuthTokens} from "../../services/actions";
+import {useDispatch} from "react-redux";
 
 export const Register = () => {
     const onFinish = (values) => {
@@ -74,8 +76,10 @@ export const Register = () => {
     );
 }
 export const Login = () => {
-    const onFinish = (values) => {
-        console.log('Success:', values);
+    const dispatch = useDispatch()
+    const onFinish = values => {
+        dispatch(setAuthTokens(values));
+        console.log(values)
     };
 
     const onFinishFailed = (errorInfo) => {
