@@ -13,6 +13,8 @@ import {Fragment} from "react";
 import DashboardLayout from "../layout/DashboardLayout";
 import LoginPage from "../pages/Login";
 import Comments from "../pages/Comments";
+import Chat from "../pages/chat";
+import Board from "../pages/board";
 import {Register, Login, Reset} from '../components/login'
 
 export const privateRoute = [
@@ -37,7 +39,18 @@ export const privateRoute = [
         path: "/comments",
         layout: DashboardLayout,
         component: Comments,
-    }, {
+    },
+    {
+        path: "/chat",
+        layout: DashboardLayout,
+        component: Chat,
+    },
+    {
+        path: "/board",
+        layout: DashboardLayout,
+        component: Board,
+    },
+    {
         path: "/login",
         layout: DashboardLayout,
         component: () => <Navigate to="/"/>,
@@ -79,7 +92,7 @@ const loginRoute = [
 ];
 const AppRoutes = () => {
     const auth = useSelector((state) => state.auth);
-    const token = auth
+        const token = auth
 
     const privateRoutesList = privateRoute.map((item, id) => {
         const {component: Component} = item;

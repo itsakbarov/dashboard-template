@@ -1,4 +1,11 @@
-import {InfoCircleOutlined, DashboardOutlined, SettingFilled, MessageOutlined,SecurityScanOutlined } from "@ant-design/icons";
+import {
+    InfoCircleOutlined,
+    DashboardOutlined,
+    SettingFilled,
+    MessageOutlined,
+    SecurityScanOutlined,
+    BarChartOutlined
+} from "@ant-design/icons";
 
 export const languages = [
     {
@@ -42,7 +49,7 @@ export const SIDEBAR_ITEMS = [
         name: "Privacy",
         path: "/privacy",
         id: 4,
-        icon: <SecurityScanOutlined />,
+        icon: <SecurityScanOutlined/>,
     },
     {
         name: "Account",
@@ -55,5 +62,11 @@ export const SIDEBAR_ITEMS = [
         path: "/chat",
         id: 7,
         icon: <MessageOutlined/>,
+    },
+    {
+        name: "Kanban Board",
+        path: "/board",
+        id: 8,
+        icon: <BarChartOutlined/>,
     },
 ];
