@@ -5,6 +5,8 @@ import {LockOutlined} from "@ant-design/icons";
 import Search from "antd/es/input/Search";
 import {setAuthTokens} from "../../services/actions";
 import {useDispatch} from "react-redux";
+import axios from 'axios'
+import {useState} from "react";
 
 export const Register = () => {
     const onFinish = (values) => {
@@ -77,9 +79,12 @@ export const Register = () => {
 }
 export const Login = () => {
     const dispatch = useDispatch()
+    const [error, setError] = useState()
     const onFinish = values => {
-        dispatch(setAuthTokens(values));
-        console.log(values)
+        axios.post("https://reqres.in/api/login", values)
+            .then(res => dispatch(setAuthTokens(res)))
+            .catch(err => console.log(err.message))
+        ;
     };
 
     const onFinishFailed = (errorInfo) => {
@@ -105,7 +110,7 @@ export const Login = () => {
                 onFinishFailed={onFinishFailed}
                 autoComplete="off"
             >
-
+                {error && error}
                 <Form.Item
                     label="Username"
                     name="username"

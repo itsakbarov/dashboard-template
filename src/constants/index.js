@@ -70,6 +70,12 @@ export const SIDEBAR_ITEMS = [
         id: 8,
         icon: <BarChartOutlined/>,
     },
+    {
+        name: "Calendar",
+        path: "/calendar",
+        id: 9,
+        icon: <BarChartOutlined/>,
+    },
 ];
 export const TOOLBAR_DATAS = {
     users: [

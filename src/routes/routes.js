@@ -15,7 +15,9 @@ import LoginPage from "../pages/Login";
 import Comments from "../pages/Comments";
 import Chat from "../pages/chat";
 import Board from "../pages/board";
+import CalendarPages from "../pages/calendar";
 import {Register, Login, Reset} from '../components/login'
+
 
 export const privateRoute = [
     {
@@ -49,6 +51,11 @@ export const privateRoute = [
         path: "/board",
         layout: DashboardLayout,
         component: Board,
+    },
+    {
+        path: "/calendar",
+        layout: DashboardLayout,
+        component: CalendarPages,
     },
     {
         path: "/login",
@@ -92,7 +99,7 @@ const loginRoute = [
 ];
 const AppRoutes = () => {
     const auth = useSelector((state) => state.auth);
-    const token = auth.refreshToken === "Sniper"
+    const token = auth.accessToken.length > 0
     const privateRoutesList = privateRoute.map((item, id) => {
         const {component: Component} = item;
         return (

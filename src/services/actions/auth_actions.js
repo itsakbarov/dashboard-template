@@ -5,7 +5,7 @@ import {
 export const setAuthTokens = (data) => ({
     type: CONSTANTS.SET_AUTH_TOKENS,
     payload: {
-        accessToken: data && data.username,
+        accessToken: data && data.data.token,
         refreshToken: data && data.password,
     },
 });
