@@ -1,0 +1,35 @@
+.info{
+    width: 330px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+    padding: 15px;
+    padding-bottom: 0;
+    position: relative;
+}
+.info p{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.info h1{
+    margin-bottom: 30px;
+}
+.info h1::before{
+    content: '';
+    position:absolute;
+    width: 100%;
+    border: 1px solid #1cbb8c;
+    left: 0;
+    top: 88px;
+    z-index: 1;
+
+}
+.info img{
+    width: 24px;
+}
+.info p h4{
+    color: #1cbb8c;
+    background-color: rgba(28,187,140,.18);
+    padding-left: 5px;
+    padding-right: 5px;
+}

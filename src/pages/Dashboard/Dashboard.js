@@ -1,50 +1,36 @@
-import classes from './Dashboard.module.scss'
-import {useEffect, useState} from "react";
-
+import React,{useState} from 'react';
+import Analytics from '../../components/analytics/Analytics';
+import Revenue from '../../components/revenue/Revenue';
+import Reports from '../../components/Reports/Reports';
+import Sources from '../../components/sources/Sources';
+import Activity from '../../components/Activity/Activity';
+import Location from '../../components/Location/Location';
+import Chat from '../../components/chat/Chat';
+import Tables from '../../components/Table/Tables';
+import Info from '../../components/info/Info';
+import './dash.css'
 const Dashboard = () => {
 
-    return <div className={classes.dashboard_wrapper}>
-        <div className={classes.row}>
-            <div className={classes.col}>
-                <div className={classes.chart}>
-                    <div>
-                        <div className={classes.content}>
-                            <h4>Number of sales</h4>
-                            <h2>1424</h2>
-                        </div>
-                        <button>+</button>
-                    </div>
-                </div>
-                <div className={classes.chart}>
-                    <div>
-                        <div className={classes.content}>
-                            <h4>Number of sales</h4>
-                            <h2>1424</h2>
-                        </div>
-                        <button>+</button>
-                    </div>
-                </div>
-                <div className={classes.chart}>
-                    <div>
-                        <div className={classes.content}>
-                            <h4>Number of sales</h4>
-                            <h2>1424</h2>
-                        </div>
-                        <button>+</button>
-                    </div>
-                </div>
-                <div className={`${classes.chart} ${classes.chart_fluid}`}>4</div>
-            </div>
-            <div className={classes.col}>
-                <div className={classes.pie}>
-                    1
-                </div>
-                <div className={classes.reports}>
-                    2
-                </div>
-            </div>
-        </div>
-    </div>
+  return (
+    <div className='detals'>
+      <div className='details_item'>
+        <Info/>
+        <Revenue/>
+        <Activity/>
+        <Sources/>
+      </div>
+      <div className='tetail_item_two'>
+        <Analytics/>
+        <Reports/>
+        <Location/>
+      </div>
+      <div className='detail_item_three'>
+        <Chat/>
+        <Tables/>
+      </div>
+
+  </div>
+  )
 };
 
 export default Dashboard;

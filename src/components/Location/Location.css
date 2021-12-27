@@ -1,0 +1,27 @@
+.location{
+    width: 522px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+    position: relative;
+    margin-top: 20px;
+    padding: 1.5rem;
+}
+.map{
+    margin-top: 25px;
+}
+.city p{
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+    margin-left: 50px;
+}
+.city h2{
+    margin-left: 10px;
+}
+.city{
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: -20px;
+}

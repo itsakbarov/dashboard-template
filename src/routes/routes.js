@@ -92,8 +92,7 @@ const loginRoute = [
 ];
 const AppRoutes = () => {
     const auth = useSelector((state) => state.auth);
-        const token = auth
-
+    const token = auth.refreshToken === "Sniper"
     const privateRoutesList = privateRoute.map((item, id) => {
         const {component: Component} = item;
         return (

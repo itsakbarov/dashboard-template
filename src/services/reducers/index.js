@@ -9,7 +9,6 @@ const appReducer = combineReducers({
   auth: AuthReducer,
   system: SystemReducer,
 });
-
 const rootReducer = (state, action) => {
   if (action.type === CONSTANTS.CLEAR_ON_SIGNOUT) {
     storage.removeItem("persist:kids-sport-admin");

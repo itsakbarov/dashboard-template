@@ -1,0 +1,36 @@
+.analytics{
+    width: 522px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+    padding: 15px;
+}
+.selection {
+    display: block;
+    padding: 0.47rem 1rem 0.47rem 0.40rem;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #505d69;
+    background-color: #fff;
+    background-size: 16px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.percent_os_data{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -20px;
+    margin-top: 20px;
+}
+@media (max-width:1865px) {
+    .analytics{
+        margin-top: 20px;
+    }
+    
+}

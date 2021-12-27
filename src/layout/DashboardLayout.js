@@ -3,10 +3,12 @@ import Sidebar from "../components/Siderbar/Siderbar";
 import "antd/dist/antd.css";
 import {Option} from "antd/lib/mentions";
 import LogoutOutlined from "@ant-design/icons/lib/icons/LogoutOutlined";
+import {logout} from "../services/actions";
+import {useDispatch} from 'react-redux'
 
 const DashboardLayout = ({children}) => {
     const {Header, Content} = Layout;
-
+    const dispatch = useDispatch()
     return (
         <Layout style={{minHeight: "100vh"}}>
             <Sidebar/>
@@ -32,7 +34,7 @@ const DashboardLayout = ({children}) => {
                             <Option value="en">ENG</Option>
                         </Select>
                         <Space direction="horizontal">
-                            <Button>
+                            <Button onClick={() => dispatch(logout())}>
                                 <LogoutOutlined color="#fff"/>
                                 <span style={{fontSize: "14px"}}>{"Log Out"}</span>
                             </Button>

@@ -6,6 +6,7 @@ import {
     SecurityScanOutlined,
     BarChartOutlined
 } from "@ant-design/icons";
+import Image from '../assets/images/avatar.jpg'
 
 export const languages = [
     {
@@ -34,7 +35,7 @@ export const SIDEBAR_ITEMS = [
         id: 1,
     },
     {
-        name: "Comments",
+        name: "Form",
         path: "/comments",
         id: 2,
         icon: <InfoCircleOutlined/>,
@@ -70,3 +71,24 @@ export const SIDEBAR_ITEMS = [
         icon: <BarChartOutlined/>,
     },
 ];
+export const TOOLBAR_DATAS = {
+    users: [
+        {
+            name: "Josh",
+            message: "Hi Josh How are you doing",
+            image: Image
+        },
+        {
+            name: "Sardor",
+            message: "Hi Josh How are you doing",
+            image: Image
+        },
+        {
+            name: "Manager",
+            message: "Hey there",
+            image: Image
+        },
+    ],
+    contacts: [],
+    groups: [],
+}

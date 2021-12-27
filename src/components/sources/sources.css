@@ -1,0 +1,38 @@
+.sources{
+    width: 522px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+    padding: 15px;
+    position: relative;
+    margin-top: 20px;
+}
+.total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.total span{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    position: relative;
+    padding: 10px;
+}
+.total span:hover{
+    background-color: violet;
+    cursor: pointer;
+}
+.total button{
+    padding: 0.25rem 0.5rem;
+    font-size: .7875rem;
+    border-radius: 0.2rem;
+    color: #fff;
+    background-color: #5664d2;
+    border-color: #5664d2;
+    border: 0;
+    cursor: pointer;
+    margin-top: 20px;
+}

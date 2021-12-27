@@ -1,13 +1,11 @@
 import classes from "./board.module.scss"
-import {DragDropContext} from 'react-beautiful-dnd';
+import React from "react";
 
-const Board = () => {
+const Board = React.memo(props => {
     return (
         <div className={classes.board}>
-            <DragDropContext>
-                a
-            </DragDropContext>
+            KANBAN BOARD
         </div>
-    )
-}
+    );
+});
 export default Board

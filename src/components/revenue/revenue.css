@@ -1,0 +1,59 @@
+.revenue{
+    width: 1068px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+    padding: 15px;
+    position: relative;
+    margin-top: 20px;
+}
+input[type="radio"]{
+    display: none;
+}
+label a{
+    background-color: #f2f5f9;
+    padding: 0.25rem 0.5rem;
+    font-size: .7875rem;
+    border-radius: 0.2rem;
+    color: #000;
+}
+label a:hover{
+    color: #000;
+}
+.period[type="radio"]:checked + label a{
+    background-color: #f2f5f9;
+    border: 3px solid #e8ecf4;
+    border-radius: 8px;
+}
+.revenue_details::before{
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 90px;
+    border: 1px solid #1cbb8c;
+}
+.revenue_details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.revenue_details p{
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+.revenue_details h2{
+    display: flex;
+    margin-bottom: 3px;
+}
+.Reports{
+    margin-top: 20px;
+    width: 337px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+    padding: 15px;
+}
+img{
+    cursor: pointer;
+}
+
